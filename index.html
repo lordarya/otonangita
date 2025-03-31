@@ -264,7 +264,32 @@
 
 
         <script>
-            const deadline = new Date('2025-4-8 ' + 9 + ':00:00');
+            
+            let name = getParameterByName('name');
+            let hari = getParameterByName('day');
+            let tgl = getParameterByName('date');
+            let jam = getParameterByName('time');
+
+            // var txtName =  document.getElementById('txtname');
+            var txtDay =  document.getElementById('txtday');
+            var txtDate =  document.getElementById('txtdate');
+            var txtName1 =  document.getElementById('txtname1');
+            var txtDay1 =  document.getElementById('txtday1');
+            var txtDate1 =  document.getElementById('txtdate1');
+            var txtTime =  document.getElementById('txttime');
+            
+           
+            txtDay.textContent = hari;
+            txtDate.textContent = tgl;
+
+            txtName1.textContent = name;
+            txtDay1.textContent = hari;
+            txtDate1.textContent = tgl;
+
+            txtTime.textContent = jam;
+
+            
+            const deadline = new Date('2025-4-'+ tgl +' ' + jam + ':00:00');
     
             tagdays = document.getElementById('days');
             taghours = document.getElementById('hours');
@@ -320,29 +345,7 @@
                 return decodeURIComponent(results[2].replace(/\+/g, ' '));
             }
 
-            let name = getParameterByName('name');
-            let hari = getParameterByName('day');
-            let tgl = getParameterByName('date');
-            let jam = getParameterByName('time');
-
-            // var txtName =  document.getElementById('txtname');
-            var txtDay =  document.getElementById('txtday');
-            var txtDate =  document.getElementById('txtdate');
-            var txtName1 =  document.getElementById('txtname1');
-            var txtDay1 =  document.getElementById('txtday1');
-            var txtDate1 =  document.getElementById('txtdate1');
-            var txtTime =  document.getElementById('txttime');
             
-           
-            txtDay.textContent = hari;
-            txtDate.textContent = tgl;
-
-            txtName1.textContent = name;
-            txtDay1.textContent = hari;
-            txtDate1.textContent = tgl;
-
-            txtTime.textContent = jam;
-
     
         </script>
 
