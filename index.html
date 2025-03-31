@@ -167,7 +167,7 @@
         
                             <div class="p-5">
         
-                                <h5 class="mb-2 text-lg font-bold tracking-tight text-center text-gray-900 ">{{ $day }}, {{ $date}} April
+                                <h5 class="mb-2 text-lg font-bold tracking-tight text-center text-gray-900 "><span id="txtday">day</span>, <span id="txtdate">date</span> April
                                     2025</h5>
                             </div>
                         </div>
@@ -178,7 +178,7 @@
                             <div class="p-5">
         
                                 <h5 class="mb-2 text-lg font-bold tracking-tight text-center text-gray-900 ">
-                                    {{ $time }}:00 - Selesai</h5>
+                                    <span id="txttime">time</span>:00 - Selesai</h5>
                             </div>
                         </div>
                     </div>
@@ -243,9 +243,9 @@
 
                     <div class="relative flex flex-col z-50 items-center justify-center p-4 rounded-t">
                         <div class="text-white font-bold text-center pt-28 text-6xl sm:text-4xl" style="font-family: 'Great Vibes', cursive;">Otonan</div>
-                        <div class="text-white  mb-10 font-[400]"> $day,  $dat April 2025</div>
+                        <div class="text-white  mb-10 font-[400]"> <span id="txtday1">day</span>,  <span id="txtdate1">date</span> April 2025</div>
                         <div class="text-white mt-64 sm:mt-5 mb-5 font-[600]">Kepada Bpk/Ibu/Saudara/i</div>
-                        <div class="text-yellow-400 mb-5 text-3xl font-bold"> $name</div>
+                        <div class="text-yellow-400 mb-5 text-3xl font-bold"> <span id="txtname1">name</span></div>
                         <div class="text-white mb-7 font-medium text-center">
                             Tanpa Mengurangi Rasa Hormat, Kami Mengundang Anda Untuk Hadir Di Acara Otonan Putri Kami.</div>
                         <button type="button" onClick = "MyAudio()"
@@ -320,12 +320,28 @@
                 return decodeURIComponent(results[2].replace(/\+/g, ' '));
             }
 
-            // Contoh penggunaan
-            let nama = getParameterByName('nama');
-            let day = getParameterByName('day');
-            let date = getParameterByName('date');
-            let time = getParameterByName('time');
-            console.log(`Nama: ${nama}, ${day}, ${date}, ${time}`);
+            let name = getParameterByName('name');
+            let hari = getParameterByName('hari');
+            let tgl = getParameterByName('tgl');
+            let jam = getParameterByName('jam');
+
+            // var txtName =  document.getElementById('txtname');
+            var txtDay =  document.getElementById('txtday');
+            var txtDate =  document.getElementById('txtdate');
+            var txtName1 =  document.getElementById('txtname1');
+            var txtDay1 =  document.getElementById('txtday1');
+            var txtDate1 =  document.getElementById('txtdate1');
+            var txtTime =  document.getElementById('txttime');
+            
+           
+            txtDay.textContent = hari;
+            txtDate.textContent = tgl;
+
+            txtName1.textContent = name;
+            txtDay1.textContent = hari;
+            txtDate1.textContent = tgl;
+
+            txtTime.textContent = jam;
 
     
         </script>
